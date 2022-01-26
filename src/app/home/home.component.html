@@ -1,10 +1,10 @@
-<div>
-<h1> Mortgage Calculator</h1>
+<div class="container">
+<h1 > Mortgage Calculator</h1>
 
 <mat-grid-list cols="3" rowHeight="3:1">
 
     <mat-grid-tile>
-        Purchase price : {{P}} k
+    Purchase price : {{P}} k
         <mat-slider
   thumbLabel
   [displayWith]="formatLabel"
@@ -72,7 +72,24 @@
         Estimated pr.month {{Estimated_pr_month }}
     </mat-grid-tile>
   </mat-grid-list>
-  <button mat-raised-button color="primary">Get a Mortgage Quote</button>
+  <button mat-raised-button color="primary"
+   (click)="openDialogWithRef(firstDialog)">Get a Mortgage Quote</button>
+   
+   <ng-template #firstDialog>
+    <h2 matDialogTitle>Summary</h2>
+    <p matDialogContent><em>
+     <ul>
+       <li>Total Amount to Be Payed = {{Loan_Amount}}</li>
+       <li>Intrest Rate  = {{R}}</li>
+       <li>Available Time = {{T}}</li>
+     </ul>
 
+    </em></p>
+    <mat-dialog-actions align="end">
+      <button mat-button matDialogClose>Dismiss</button>
+    </mat-dialog-actions>
+  </ng-template>
+    
+ 
 
 </div>

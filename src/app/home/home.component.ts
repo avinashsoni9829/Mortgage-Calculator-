@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+
+import {Component, Inject ,OnInit} from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+import { ViewChild, TemplateRef } from '@angular/core';
 
 
 @Component({
@@ -6,6 +10,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+
+
 
 
 
@@ -22,11 +29,14 @@ export class HomeComponent implements OnInit {
   Estimated_pr_month = this.Loan_Amount/12 ;
 
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
    
   ngOnInit(): void {
   }
   
+  openDialogWithRef(ref: TemplateRef<any>) {
+    this.dialog.open(ref);
+  }
   setPrincipal(event: any) {
     this.P = event.value;
     this.net_principal = (this.P - this.Dp) > 0 ? (this.P  - this.Dp) : 0;
@@ -73,7 +83,12 @@ export class HomeComponent implements OnInit {
 
     return value;
   }
-
+  
+  showData(){
+    
+     
+     
+  }
   
 
 
