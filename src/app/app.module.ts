@@ -9,12 +9,12 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
-import { DailogComponent } from './dailog/dailog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DailogComponent,
+   
 
   ],
   imports: [
